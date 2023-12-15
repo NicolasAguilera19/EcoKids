@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
-import { CartService } from 'src/app/services/cart.service';
-import { EcoinsService } from 'src/app/services/ecoins.service';
+import { CartService } from 'src/app/core/services/cart.service';
+import { EcoinsService } from 'src/app/core/services/ecoins.service';
 
 @Component({
   selector: 'app-pagina-carrito',
@@ -64,8 +64,16 @@ Notas:
      return mensaje;
   }
 
-  realizarPedido(){
-    window.open(this.crearMensaje(), '_blank');
-    this.cartService.vaciarCarrito();
+  realizarPedido() {
+    if (this.puedeComprarTotalCarrito()) {
+      window.open(this.crearMensaje(), '_blank');
+
+      const totalCompra = this.cartService.totalCarrito;
+      this.ecoinsService.restarDinero(totalCompra);
+
+      this.cartService.vaciarCarrito();
+    } else {
+      console.log('No hay suficientes monedas para realizar la compra.');
+    }
   }
 }

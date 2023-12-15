@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { producto } from '../core/interfaces/producto';
 import { PRODUCTOS } from '../core/constants/productos';
 import { Router } from '@angular/router';
-import { CartService } from '../services/cart.service';
-import { EcoinsService } from '../services/ecoins.service';
+import { CartService } from '../core/services/cart.service';
+import { EcoinsService } from '../core/services/ecoins.service';
 import { NavController } from '@ionic/angular';
 
 @Component({

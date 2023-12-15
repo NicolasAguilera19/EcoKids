@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EcoinsService } from '../services/ecoins.service';
+import { EcoinsService } from '../core/services/ecoins.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
