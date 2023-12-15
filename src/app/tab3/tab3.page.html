@@ -10,6 +10,17 @@
 </ion-header>
 
 <ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Tienda
+      </ion-title>
+      <ion-buttons slot="end"> 
+        <ion-button (click)="irAPaginaCarrito()">Carrito</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
   <h2>Total ECoins: {{ totalECoins }}</h2>  
   <h3>Artículos disponibles en la tienda:</h3>
   <ion-card *ngFor="let producto of productos">
